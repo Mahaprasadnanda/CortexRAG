@@ -11,8 +11,6 @@ CortexRAG is an intelligent chatbot system designed to provide accurate and cont
 *   **PGVector:** PostgreSQL extension for storing and querying vector embeddings, enabling efficient semantic search.
 *   **Cache Service:** Improves performance and reduces latency by caching frequent responses.
 
-## Architecture Diagram
-
 ```mermaid
 graph TD
     User --> FastAPI[FastAPI (retrieval_service)]
