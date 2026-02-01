@@ -13,12 +13,13 @@ CortexRAG is an intelligent chatbot system designed to provide accurate and cont
 
 ```mermaid
 graph TD
-    User --> FastAPI[FastAPI (retrieval_service)]
-    FastAPI --> CacheService[Cache Service (Redis)]
-    FastAPI --> RetrievalService[Retrieval Service]
-    RetrievalService --> PostgreSQL[PostgreSQL (PGVector)]
-    RetrievalService --> UnstructuredData[Unstructured Data Files (PDFs)]
+    User --> FastAPI["FastAPI - retrieval_service"]
+    FastAPI --> CacheService["Cache Service - Redis"]
+    FastAPI --> RetrievalService["Retrieval Service"]
+    RetrievalService --> PostgreSQL["PostgreSQL - PGVector"]
+    RetrievalService --> UnstructuredData["Unstructured Data Files - PDFs"]
     CacheService -.-> RetrievalService
+
 ```
 
 ## Setup Instructions
