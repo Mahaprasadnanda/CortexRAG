@@ -13,9 +13,15 @@ CortexRAG is an intelligent chatbot system designed to provide accurate and cont
 
 ## Architecture Diagram
 
-![CortexRAG Architecture](architecture_diagram.png)
-
-(Please generate the `architecture_diagram.png` separately with the description: "A simple architecture diagram for a RAG chatbot. User interacts with FastAPI. FastAPI communicates with a Cache Service and a Retrieval Service. The Retrieval Service interacts with a PostgreSQL database and unstructured data files (PDFs).")
+```mermaid
+graph TD
+    User --> FastAPI[FastAPI (retrieval_service)]
+    FastAPI --> CacheService[Cache Service (Redis)]
+    FastAPI --> RetrievalService[Retrieval Service]
+    RetrievalService --> PostgreSQL[PostgreSQL (PGVector)]
+    RetrievalService --> UnstructuredData[Unstructured Data Files (PDFs)]
+    CacheService -.-> RetrievalService
+```
 
 ## Setup Instructions
 
